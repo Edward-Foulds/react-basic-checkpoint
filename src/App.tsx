@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Layout/Header";
+import "./App.css";
+import Products from "./components/Products/Products";
+import CartContextProvider from "./store/CartProvider";
+import WishlistContextProvider from "./store/WishlistProvider";
+import Cart from "./components/Cart/Cart";
+import { useState } from "react";
+import Wishlist from "./components/Wishlist/Wishlist";
 
 function App() {
+  const [showCart, setShowCart] = useState(false);
+  const [showWishlist, setShowWishlist] = useState(false);
+
+  const showCartHandler = () => {
+    setShowCart(true);
+  };
+  const showWishlistHandler = () => {
+    setShowWishlist(true);
+  };
+  const closeCartAndWishlist = () => {
+    setShowCart(false);
+    setShowWishlist(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <WishlistContextProvider>
+        <CartContextProvider>
+          {showCart && <Cart onClose={closeCartAndWishlist} />}
+          {showWishlist && <Wishlist onClose={closeCartAndWishlist} />}
+          <Header
+            onShowCart={showCartHandler}
+            onShowWishlist={showWishlistHandler}
+          />
+          <main>
+            <Products />
+          </main>
+        </CartContextProvider>
+      </WishlistContextProvider>
+    </>
   );
 }
 
