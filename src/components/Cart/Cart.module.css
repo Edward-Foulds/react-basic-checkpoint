@@ -17,17 +17,17 @@
   font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #8a2b06;
+  border: 1px solid rgb(29, 29, 110);
   padding: 0.2rem 1rem;
   border-radius: 25px;
   margin-left: 1rem;
-  color: #8a2b06;
+  color: rgb(29, 29, 110);
 }
 
 .cart-header button:hover,
 .cart-header button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
+  background-color: rgb(29, 29, 110);
+  border-color: rgb(29, 29, 110);
   color: white;
 }
 
@@ -46,4 +46,5 @@
   font-weight: bold;
   font-size: 1.5rem;
   margin: 1rem 0;
+  border-top: 2px solid rgb(29, 29, 110);
 }

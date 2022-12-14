@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #8a2b06;
+  flex-direction: column;
+  border-top: 2px solid rgb(29, 29, 110);
   padding: 1rem 0;
-  margin: 1rem 0;
 }
 
 .wishlist-item h2 {
   margin: 0 0 0.5rem 0;
-  color: #363636;
+  color: rgb(29, 29, 110);
 }
 
 .image img {
@@ -17,7 +17,6 @@
 }
 
 .details {
-  flex-basis: 50%;
   text-align: center;
 }
 
@@ -29,12 +28,12 @@
 
 .price {
   font-weight: bold;
-  color: #8a2b06;
-  margin: 0 2rem;
+  color: rgb(29, 29, 110);
+  margin: 0 1rem;
 }
 
 @media (min-width: 768px) {
-  .actions {
+  .wishlist-item {
     flex-direction: row;
   }
 }
@@ -43,8 +42,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1rem;
-  color: #8a2b06;
-  border: 1px solid #8a2b06;
+  color: rgb(29, 29, 110);
+  border: 1px solid rgb(29, 29, 110);
   width: 5rem;
   text-align: center;
   border-radius: 6px;
@@ -56,6 +55,6 @@
 
 .wishlist-item button:hover,
 .wishlist-item button:active {
-  background-color: #8a2b06;
+  background-color: rgb(29, 29, 110);
   color: white;
 }

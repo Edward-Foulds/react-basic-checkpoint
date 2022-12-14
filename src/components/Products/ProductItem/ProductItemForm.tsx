@@ -25,10 +25,16 @@ const ProductItemForm: React.FC<{ onAddToCart: (amount: number) => void }> = (
   };
 
   return (
-    <form onSubmit={addToCartHandler}>
+    <form className={classes.form} onSubmit={addToCartHandler}>
       <div>
-        <label htmlFor="amount">Qty:</label>
-        <input type="number" id="amount" name="amount" ref={inputAmount} />
+        <label htmlFor="amount">Qty: </label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          ref={inputAmount}
+          min="1"
+        />
       </div>
       <button className={classes.button}>+Add to Cart</button>
       {!amountIsValid && (

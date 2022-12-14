@@ -60,7 +60,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
           </div>
         </div>
         <div className={classes.action}>
-          <p>Price: £{props.product.price.toFixed(2)}</p>
+          <span>Price: £{props.product.price.toFixed(2)}</span>
           <ProductItemForm onAddToCart={addToCartHandler} />
         </div>
       </div>

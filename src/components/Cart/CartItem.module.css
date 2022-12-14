@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #8a2b06;
+  flex-direction: column;
+  border-top: 2px solid rgb(29, 29, 110);
+  padding: 1rem 0;
 }
 
 .details {
@@ -12,7 +14,7 @@
 
 .details h2 {
   margin: 0 0 0.5rem 0;
-  color: #363636;
+  color: rgb(29, 29, 110);
 }
 
 .image img {
@@ -21,22 +23,21 @@
 
 .summary {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .values {
-  width: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
 }
 
 .price {
   font-weight: bold;
-  color: #8a2b06;
+  color: rgb(29, 29, 110);
   margin: 0.5rem;
 }
 
@@ -45,17 +46,17 @@
   border: 1px solid #ccc;
   padding: 0.25rem 0.75rem;
   border-radius: 6px;
-  color: #363636;
-  margin: 0.5rem;
+  color: rgb(29, 29, 110);
+  margin: 0.25rem;
 }
 
 .actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 @media (min-width: 768px) {
-  .actions {
+  .cart-item {
     flex-direction: row;
   }
 }
@@ -64,19 +65,18 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #8a2b06;
-  border: 1px solid #8a2b06;
+  color: rgb(29, 29, 110);
+  border: 1px solid rgb(29, 29, 110);
   width: 3rem;
   text-align: center;
   border-radius: 6px;
   background-color: transparent;
   cursor: pointer;
-  margin-left: 1rem;
   margin: 0.25rem;
 }
 
 .cart-item button:hover,
 .cart-item button:active {
-  background-color: #8a2b06;
+  background-color: rgb(29, 29, 110);
   color: white;
 }
