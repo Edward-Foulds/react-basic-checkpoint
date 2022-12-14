@@ -1,0 +1,20 @@
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  color: white;
+}
+
+.intro h1 {
+  font-weight: bold;
+  /* margin: 0 0 0 1rem; */
+  text-align: center;
+}
+
+.intro svg {
+  height: 4rem;
+  width: 4rem;
+  padding: 0.2rem;
+  /* margin: 0 rem 0 0; */
+}

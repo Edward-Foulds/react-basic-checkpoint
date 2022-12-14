@@ -1,3 +1,4 @@
+import Title from "./Title";
 import classes from "./Header.module.css";
 import HeaderButton from "./HeaderButton";
 
@@ -10,15 +11,13 @@ const Header: React.FC<{
       <nav>
         <ul>
           <li>
-            <h1>ReactClothing</h1>
-          </li>
-        </ul>
-        <ul>
-          <li>
             <HeaderButton
               text={"Wishlist"}
               onShowModal={props.onShowWishlist}
             />
+          </li>
+          <li>
+            <Title />
           </li>
           <li>
             <HeaderButton text={"Cart"} onShowModal={props.onShowCart} />

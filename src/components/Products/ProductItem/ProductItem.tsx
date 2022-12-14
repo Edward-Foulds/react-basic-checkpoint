@@ -30,20 +30,39 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
     });
   };
 
+  const onWishList = wishlistCtx.items.find(
+    (item) => item.id === props.product.id
+  );
+
+  const handleHeartClick = () => {
+    onWishList
+      ? wishlistCtx.removeItem(props.product.id)
+      : addToWishlistHandler();
+  };
+
   return (
     <Card>
-      <div className={classes.product}>
-        <h3>{props.product.title}</h3>
-        <img src={props.product.image} alt={props.product.title} />
-        <div>
-          <button onClick={addToWishlistHandler}>
-            <svg>
-              <use xlinkHref="./img/sprite.svg#icon-heart-outlined"></use>
-            </svg>
-          </button>
+      <div className={classes.card}>
+        <div className={classes.title}>
+          <h3>{props.product.title}</h3>
         </div>
-        <p>£{props.product.price}</p>
-        <ProductItemForm onAddToCart={addToCartHandler} />
+
+        <div className={classes.product}>
+          <svg onClick={handleHeartClick}>
+            <use
+              xlinkHref={`./img/sprite.svg#icon-heart${
+                onWishList ? "" : "-outlined"
+              }`}
+            ></use>
+          </svg>
+          <div className={classes.image}>
+            <img src={props.product.image} alt={props.product.title} />
+          </div>
+        </div>
+        <div className={classes.action}>
+          <p>Price: £{props.product.price.toFixed(2)}</p>
+          <ProductItemForm onAddToCart={addToCartHandler} />
+        </div>
       </div>
     </Card>
   );

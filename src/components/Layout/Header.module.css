@@ -1,13 +1,7 @@
 .header {
-  background-color: red;
-  margin: 0;
+  background-color: rgb(29, 29, 110);
+  margin: 0 0 2rem 0;
   padding: 0;
-}
-
-.header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .header ul {

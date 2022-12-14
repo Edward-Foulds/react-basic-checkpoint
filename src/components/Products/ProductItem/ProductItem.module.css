@@ -1,3 +1,46 @@
-.product img {
-  max-width: 4rem;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+}
+
+.card .title {
+  margin: 1rem;
+  width: 100%;
+  height: 2.1em;
+  line-height: 1em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.product .image img {
+  max-width: 80%;
+  margin-bottom: 1rem;
+  /* mix-blend-mode: multiply; */
+}
+
+.product svg {
+  position: absolute;
+  fill: red;
+  right: 0;
+  top: 0;
+  height: 2rem;
+  width: 2rem;
+}
+
+.action {
+  flex-basis: 1;
 }

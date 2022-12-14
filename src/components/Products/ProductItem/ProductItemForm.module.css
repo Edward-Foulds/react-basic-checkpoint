@@ -1,0 +1,17 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: rgb(29, 29, 110);
+  color: white;
+  padding: 0.75rem 3rem;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button:hover,
+.button:active {
+  background-color: rgb(16, 16, 63);
+}

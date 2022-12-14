@@ -7,8 +7,9 @@ type WishlistStateObj = {
 };
 
 type WishlistActionObj = {
+  id?: number;
   type: string;
-  item: Item;
+  item?: Item;
 };
 
 const defaultWishlistState: WishlistStateObj = {
@@ -20,30 +21,25 @@ const wishlistReducer = (
   action: WishlistActionObj
 ): WishlistStateObj => {
   if (action.type === "ADD") {
-    const existingCartItemIndex = state.items.findIndex(
-      (item) => item.id === action.item.id
+    const existingWishlistItem = state.items.find(
+      (item) => item.id === action.item!.id
     );
 
-    const existingCartItem = state.items[existingCartItemIndex];
-    let updatedItems;
+    return {
+      items: existingWishlistItem
+        ? state.items
+        : state.items.concat(action.item!),
+    };
+  }
 
-    if (existingCartItem) {
-      const updatedItem = {
-        ...existingCartItem,
-        amount: existingCartItem.amount + action.item.amount,
-      };
-      updatedItems = [...state.items];
-      updatedItems[existingCartItemIndex] = updatedItem;
-    } else {
-      updatedItems = state.items.concat(action.item);
-    }
-
-    console.log("wishlist:", updatedItems);
+  if (action.type === "REMOVE") {
+    const updatedItems = state.items.filter((item) => item.id !== action.id);
 
     return {
       items: updatedItems,
     };
   }
+
   return defaultWishlistState;
 };
 
@@ -59,9 +55,14 @@ const WishlistContextProvider = ({
     dispatchWishlistAction({ type: "ADD", item: item });
   };
 
+  const removeItemFromWishlistHandler = (id: number) => {
+    dispatchWishlistAction({ type: "REMOVE", id: id });
+  };
+
   const wishlistContext = {
     items: wishlistState.items,
     addItem: addItemToWishlistHandler,
+    removeItem: removeItemFromWishlistHandler,
   };
 
   return (

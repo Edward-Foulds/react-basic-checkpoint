@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useState } from "react";
+import classes from "./ProductItemForm.module.css";
 
 const ProductItemForm: React.FC<{ onAddToCart: (amount: number) => void }> = (
   props
@@ -20,16 +21,19 @@ const ProductItemForm: React.FC<{ onAddToCart: (amount: number) => void }> = (
     setAmountIsValid(true);
     console.log("Amount is valid");
     props.onAddToCart(enteredAmount);
+    inputAmount.current!.value = "";
   };
 
   return (
     <form onSubmit={addToCartHandler}>
       <div>
-        <label htmlFor="amount">Amount</label>
+        <label htmlFor="amount">Qty:</label>
         <input type="number" id="amount" name="amount" ref={inputAmount} />
       </div>
-      <button>+Add to Cart</button>
-      {!amountIsValid && <p>Please enter a valid amount.</p>}
+      <button className={classes.button}>+Add to Cart</button>
+      {!amountIsValid && (
+        <p style={{ color: "red" }}>Please enter a valid amount.</p>
+      )}
     </form>
   );
 };
