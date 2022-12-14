@@ -2,9 +2,9 @@ import React from "react";
 import { useRef, useState } from "react";
 import classes from "./ProductItemForm.module.css";
 
-const ProductItemForm: React.FC<{ onAddToCart: (amount: number) => void }> = (
-  props
-) => {
+const ProductItemForm = (props: {
+  onAddToCart: (amount: number) => void;
+}): JSX.Element => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const inputAmount = useRef<HTMLInputElement>(null);
 

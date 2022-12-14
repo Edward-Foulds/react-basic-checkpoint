@@ -6,7 +6,7 @@ const WishlistItem = (props: {
   image: string;
   onAddToCart: () => void;
   onRemoveFromWishlist: () => void;
-}) => {
+}): JSX.Element => {
   return (
     <li className={classes["wishlist-item"]}>
       <div className={classes.details}>

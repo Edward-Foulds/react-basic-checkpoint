@@ -7,7 +7,7 @@ const CartItem = (props: {
   image: string;
   onAdd: () => void;
   onRemove: () => void;
-}) => {
+}): JSX.Element => {
   return (
     <li className={classes["cart-item"]}>
       <div className={classes.details}>

@@ -7,7 +7,7 @@ import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 import Wishlist from "./components/Wishlist/Wishlist";
 
-function App() {
+const App = (): JSX.Element => {
   const [showCart, setShowCart] = useState(false);
   const [showWishlist, setShowWishlist] = useState(false);
 
@@ -39,6 +39,6 @@ function App() {
       </WishlistContextProvider>
     </>
   );
-}
+};
 
 export default App;

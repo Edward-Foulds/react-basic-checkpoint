@@ -1,6 +1,6 @@
 import classes from "./Title.module.css";
 
-const Title = () => {
+const Title = (): JSX.Element => {
   return (
     <div className={classes.intro}>
       <svg viewBox="0 0 20 20" fill="currentColor">

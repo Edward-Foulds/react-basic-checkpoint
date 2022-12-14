@@ -1,6 +1,6 @@
 import AvailableProducts from "./AvailableProducts";
 
-const Products = () => {
+const Products = (): JSX.Element => {
   return (
     <>
       <AvailableProducts />

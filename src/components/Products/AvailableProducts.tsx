@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ProductItem from "./ProductItem/ProductItem";
 import classes from "./AvailableProducts.module.css";
 
-const AvailableProducts = () => {
+const AvailableProducts = (): JSX.Element => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {

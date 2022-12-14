@@ -5,7 +5,7 @@ import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 
-const Cart: React.FC<{ onClose: () => void }> = (props) => {
+const Cart = ({ onClose }: { onClose: () => void }): JSX.Element => {
   const cartCtx = useContext(CartContext);
 
   const cartItemAddHandler = (item: Item) => {
@@ -31,10 +31,10 @@ const Cart: React.FC<{ onClose: () => void }> = (props) => {
   ));
 
   return (
-    <Modal onClose={props.onClose}>
+    <Modal onClose={onClose}>
       <div className={classes["cart-header"]}>
         <h3 className={classes["cart-title"]}>Cart</h3>
-        <button onClick={props.onClose}>Close</button>
+        <button onClick={onClose}>Close</button>
       </div>
 
       <div>

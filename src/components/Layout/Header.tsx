@@ -2,10 +2,10 @@ import Title from "./Title";
 import classes from "./Header.module.css";
 import HeaderButton from "./HeaderButton";
 
-const Header: React.FC<{
+const Header = (props: {
   onShowCart: () => void;
   onShowWishlist: () => void;
-}> = (props) => {
+}): JSX.Element => {
   return (
     <header className={classes.header}>
       <nav>

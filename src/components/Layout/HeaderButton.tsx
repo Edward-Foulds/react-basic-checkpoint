@@ -5,10 +5,10 @@ import { useContext, useState, useEffect } from "react";
 import WishlistContext from "../../store/wishlist-context";
 import WishlistIcon from "../Wishlist/WishlistIcon";
 
-const HeaderButton: React.FC<{
+const HeaderButton = (props: {
   text: string;
   onShowModal: () => void;
-}> = (props) => {
+}): JSX.Element => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
 
   const cartCtx = useContext(CartContext);

@@ -6,7 +6,7 @@ import { useContext } from "react";
 import CartContext from "../../../store/cart-context";
 import WishlistContext from "../../../store/wishlist-context";
 
-const ProductItem: React.FC<{ product: Product }> = (props) => {
+const ProductItem = (props: { product: Product }): JSX.Element => {
   const cartCtx = useContext(CartContext);
   const wishlistCtx = useContext(WishlistContext);
 

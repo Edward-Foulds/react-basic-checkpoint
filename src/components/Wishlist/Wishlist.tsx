@@ -7,7 +7,7 @@ import CartContext from "../../store/cart-context";
 
 import classes from "./Wishlist.module.css";
 
-const Wishlist = (props: { onClose: () => void }) => {
+const Wishlist = (props: { onClose: () => void }): JSX.Element => {
   const wishlistCtx = useContext(WishlistContext);
   const cartCtx = useContext(CartContext);
 
