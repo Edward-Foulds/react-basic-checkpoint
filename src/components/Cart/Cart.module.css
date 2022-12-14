@@ -48,3 +48,23 @@
   margin: 1rem 0;
   border-top: 2px solid rgb(29, 29, 110);
 }
+
+.clear {
+  text-align: center;
+}
+
+.clear button {
+  border: 1px solid red;
+  font: inherit;
+  color: red;
+  padding: 0.2rem 1rem;
+  border-radius: 25px;
+  background: transparent;
+}
+
+.clear button:hover,
+.clear button:active {
+  background-color: red;
+  border-color: red;
+  color: white;
+}

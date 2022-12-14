@@ -16,6 +16,10 @@ const Cart = ({ onClose }: { onClose: () => void }): JSX.Element => {
     cartCtx.removeItem(id);
   };
 
+  const cartClearHandler = () => {
+    cartCtx.clearCart();
+  };
+
   const hasItems = cartCtx.items.length > 0;
 
   const cartItems = cartCtx.items.map((item) => (
@@ -51,6 +55,9 @@ const Cart = ({ onClose }: { onClose: () => void }): JSX.Element => {
         <div className={classes.total}>
           <span>Total Amount</span>
           <span>£{cartCtx.totalAmount.toFixed(2)}</span>
+        </div>
+        <div className={classes.clear}>
+          <button onClick={cartClearHandler}>Clear Cart</button>
         </div>
       </div>
     </Modal>

@@ -44,8 +44,6 @@ const cartReducer = (
       updatedItems = state.items.concat(action.item!);
     }
 
-    console.log("Cart Items: ", updatedItems);
-    console.log("Cart Total: ", updatedTotalAmount);
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -74,6 +72,10 @@ const cartReducer = (
     };
   }
 
+  if (action.type === "CLEAR") {
+    return defaultCartState;
+  }
+
   return defaultCartState;
 };
 
@@ -89,12 +91,16 @@ const CartContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
   const removeItemFromCartHandler = (id: number) => {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: "CLEAR" });
+  };
 
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    clearCart: clearCartHandler,
   };
 
   return (
